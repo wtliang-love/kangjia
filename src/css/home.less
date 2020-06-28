@@ -305,10 +305,6 @@
             }
         }
     }
-
-
-
-    
 }
 
 
@@ -318,7 +314,13 @@
 
 
 
-// 站点新闻
+
+
+
+
+
+
+// 站点新闻news
 .news_wrap{
     height: 200px;
     padding: 0;
@@ -355,7 +357,7 @@
 
 
 
-//明星产品
+//明星产品star
 .star_wrap{
     height: 420px;
     padding-top: 30px;
@@ -438,7 +440,9 @@
 
 
 
-//主要商品内容
+
+
+//主要商品内容content
 .content{
     background: #f7f7f7;
     margin-top: 30px;
@@ -534,7 +538,7 @@
 
 
 
-//help帮助模块
+//help帮助模块help
 .help_wrap{
     height: 535px;
     // padding-top: 40px;
@@ -675,4 +679,84 @@
             }
         }
     }
+}
+
+
+
+
+
+// 左侧锚点 楼梯特效noun
+.noun{
+
+    display: none;//隐藏了隐藏了隐藏了隐藏了隐藏了
+
+    width: 40px;
+    position:fixed;
+    top: 100px;
+    left: 55px;
+
+    ul>li{
+        border-bottom: 1px solid #fff;
+        height: 45px;
+        background: #888;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        transition: .25s;
+        a{
+            display: block;
+            width: 40px;
+            color: white;
+            font-size: 12px;
+            text-align: center;
+            padding: 5px;
+        }
+
+        &:hover{
+            background: #ed1c24;
+        }
+    }
+}
+
+
+
+//右侧工具栏tool
+.tool{
+    position: fixed;
+    top: 500px;
+    right: 0;
+    ul>li{
+        width: 42px;
+        height: 42px;
+        border: 1px solid #bcbcbc;
+        margin: -1px 0 -1px 0;
+        position: relative;
+        background: #fff;
+        overflow: hidden;
+        transition: 1s;//这个东西不起作用，是个bug，对定位元素好像没有效果，待解决
+
+        *{
+            position: absolute;
+            top: 0;
+            width: 42px;
+            height: 42px;
+            text-align: center;
+            display: block;
+        }
+        i{
+            line-height: 45px;  
+        }
+        a{
+            font-size: 12px;
+            padding: 4px;
+            background: red;
+            color: white;
+            display: none;
+        }
+
+        &:hover a{
+            display: block;
+        }
+    }
+
 }
