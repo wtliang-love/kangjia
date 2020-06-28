@@ -72,40 +72,42 @@
   color: #767676;
   font-size: 16px;
 }
-.nav_wrap ul > li a:hover {
+.nav_wrap ul > li:hover {
   color: #ed1c24;
   background-color: #fff;
 }
-.nav_wrap ul > li a:hover .item_child {
+.nav_wrap ul > li:hover .item_child {
   display: block;
 }
-.nav_wrap ul > li a i {
-  margin-top: 2px;
-  font-size: 22px;
-}
-.nav_wrap ul > li a .item_child {
+.nav_wrap ul > li .item_child {
   position: absolute;
   left: 0;
+  top: 50px;
   background-color: #fff;
   height: 310px;
   width: 1140px;
   box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.3);
   display: none;
 }
-.nav_wrap ul > li a .item_child .row {
+.nav_wrap ul > li .item_child .row {
   width: 1140px;
   padding-top: 20px;
 }
-.nav_wrap ul > li a .item_child .row .col-md-2 {
+.nav_wrap ul > li .item_child .row .col-md-2 {
   height: 260px;
   text-align: center;
   font-size: 16px;
 }
-.nav_wrap ul > li a .item_child .row .col-md-2 * {
+.nav_wrap ul > li .item_child .row .col-md-2 * {
   display: block;
   width: 100%;
 }
-.nav_wrap ul > li a .item_child .row .col-md-2 h4 {
+.nav_wrap ul > li .item_child .row .col-md-2 a {
+  cursor: pointer;
+  display: block;
+  height: 160px;
+}
+.nav_wrap ul > li .item_child .row .col-md-2 h4 {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -114,12 +116,12 @@
   line-height: 30px;
   color: black;
 }
-.nav_wrap ul > li a .item_child .row .col-md-2 p {
+.nav_wrap ul > li .item_child .row .col-md-2 p {
   height: 30px;
   line-height: 30px;
   color: #989898;
 }
-.nav_wrap ul > li a .item_child .row .col-md-2 span {
+.nav_wrap ul > li .item_child .row .col-md-2 span {
   height: 30px;
   line-height: 30px;
   color: red;
@@ -205,7 +207,10 @@
 .banner .category ul li a i {
   float: right;
 }
-.banner .category ul li a div {
+.banner .category ul li:hover .cate_menu {
+  display: block;
+}
+.banner .category ul li .cate_menu {
   position: absolute;
   height: 500px;
   top: 0;
@@ -214,38 +219,36 @@
   z-index: 999;
   display: none;
 }
-.banner .category ul li a div ul {
+.banner .category ul li .cate_menu ul {
   width: 234px;
   height: 100%;
   float: left;
   overflow: hidden;
 }
-.banner .category ul li a div ul li {
+.banner .category ul li .cate_menu ul li > a {
+  display: block;
   height: 80px;
   line-height: 80px;
   color: black;
   padding-left: 10px;
 }
-.banner .category ul li a div ul li > * {
+.banner .category ul li .cate_menu ul li > a > * {
   display: inline-block;
   vertical-align: middle;
 }
-.banner .category ul li a div ul li img {
+.banner .category ul li .cate_menu ul li > a img {
   width: 50px!important;
   height: 35px!important;
 }
-.banner .category ul li a div ul li p {
+.banner .category ul li .cate_menu ul li > a p {
   margin-left: 5px;
 }
-.banner .category ul li a div ul li i {
+.banner .category ul li .cate_menu ul li > a i {
   width: 0;
   height: 100%;
 }
-.banner .category ul li a div ul li:hover {
+.banner .category ul li .cate_menu ul li > a:hover {
   color: red;
-}
-.banner .category ul li a:hover div {
-  display: block;
 }
 .news_wrap {
   height: 200px;
