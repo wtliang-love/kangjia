@@ -1,0 +1,681 @@
+@charset 'utf-8';
+
+// header*************************
+.header{
+    background-color: #333;
+
+    &>.header_wrap{
+        height: 40px;
+        font-size: 12px;
+        a{
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            color: #b0b0b0;
+            display: inline-block;
+            cursor: pointer;
+        }
+        span{
+            margin: 0 10px;
+                color: #424242;
+                float: left;
+                height: 40px;
+                line-height: 40px;
+        }
+
+        &>.header_left{
+            ul{
+                li{
+                    float: left; 
+                } 
+            }
+        }
+
+        &>.header_right{
+            *{
+                float: left;
+                font-size: 12px;
+            }
+            
+            .shopping_car>a{
+                padding: 0 20px;
+                margin-left: 15px;
+                height: 40px;
+                line-height: 40px;
+                i{
+                    padding-right: 5px;
+                    font-size: 16px;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}
+
+
+
+// 导航栏******************************
+.nav_wrap{
+    height: 50px;
+    box-shadow: 0 4px 10px 0 rgba(0,0,0,.3);
+    background-color: #f4f4f4;
+    position: sticky;;
+    top: 0px;
+    z-index: 9999;
+    *{
+        float: left;
+        text-align: center;
+        line-height: 50px;
+    }
+
+    h1{
+        padding:0 20px;
+        height: 50px;
+        width: 161px;
+        a{
+            margin-top: 12px;
+            margin-left: 5px;
+            img{
+                width: 112px;
+                height: 28px;
+            }
+        }  
+    }
+
+    ul>li{
+        a{
+            display: inline-block;
+            width: 72px;
+            height: 50px;
+            color:#767676;
+            font-size: 16px;
+
+            &:hover{
+                color: #ed1c24;
+                background-color: #fff;
+                .item_child{
+                    display: block;
+                }
+            }
+            i{
+                margin-top: 2px;
+                font-size: 22px;  
+            }
+            .item_child{
+                position: absolute;
+                left: 0;
+                background-color: #fff;
+                height: 310px;
+                width: 1140px;
+                box-shadow: 0 4px 10px 0 rgba(0,0,0,.3);
+                display: none;
+    
+                .row{
+                    width: 1140px;
+                    padding-top: 20px;
+                    .col-md-2{
+                        height: 260px;
+                        text-align: center;
+                        font-size: 16px;
+                        
+                        *{
+                            display: block;
+                            width: 100%; 
+                        }
+                        // img{
+                        //     width: 100%;
+                        // }
+                        h4{
+                            white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            padding:0 16px;
+                            height: 30px;
+                            line-height: 30px;
+                            color: black;
+                        }
+                        p{
+                            height: 30px;
+                            line-height: 30px;
+                            color: #989898;
+                        }
+                        span{
+                            height: 30px;
+                            line-height: 30px;
+                            color: red;
+                        }
+                    }
+                }
+            }
+        }
+        &:last-child{
+            a{
+                padding-left: 25px;
+            }
+            a:hover{
+                color: #767676;
+            }
+        }
+    }  
+}
+
+
+
+
+
+
+
+
+
+// 轮播图***********************
+.banner{
+    background-color: pink;
+    position: relative;
+    
+    .banner_wrap{
+        position: relative;
+        .banner_pic{
+            overflow: hidden;
+            width: 570px;
+            height: 500px;
+            position: relative;
+            margin-left: 50%;
+            //通过js使得定位-50%，实现轮播图什么时候都居中
+            &>div{
+                height: 500px;
+                position: absolute;
+        
+                &>img{
+                    float: left;  // 所有的浮动元素 默认都是块级元素 block  并且浮动元素 display属性无法修改元素的类型
+                }
+            }
+            &>span{
+                position:absolute;
+                top:40%;
+                margin-left: 150px;
+                font-size:3em;
+                user-select: none;
+                cursor: pointer;
+                color:lightgray
+            }
+            &>span:last-of-type{
+                right:150px;
+            }
+            &>ul{
+                list-style: none;
+                position: absolute;
+                left: 0;right: 0;
+                bottom: 50px;
+                margin: auto;
+                z-index: 122;
+                &>li{
+                    width: 45px;
+                    height: 4px;
+                    background-color: lightgray;
+                    margin-right: 5px;
+                    float: left;    
+                }
+                
+            }
+    
+        }
+    }
+    
+    .show{
+        background-color: red!important;
+    }
+
+
+    //左侧半透明导航栏
+    .category{
+        background: rgba(0,0,0,.6);
+        height: 100%;
+        width: 234px;
+        color: #fff;
+        margin: 0;
+        padding: 25px 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: absolute;
+        top: 0;
+
+        ul{
+            li{
+                a{
+                    display: block;
+                    height: 45px;
+                    line-height: 45px;
+                    padding: 0 10px 0 30px;
+                    color: white;
+                    i{
+                        float: right;
+                    }
+
+                    div{
+                        position: absolute;
+                        height: 500px;
+                        top: 0;
+                        left: 234px;
+                        background-color: white;
+                        z-index: 999;
+                        display: none;
+                        
+
+                        ul{
+                            width: 234px;
+                            height: 100%;
+                            float: left;
+                            overflow: hidden;
+                            li{
+                                height: 80px;
+                                line-height: 80px;
+                                color: black;
+                                padding-left: 10px;
+
+                                &>*{
+                                    display: inline-block;
+                                    vertical-align: middle;
+                                }
+                                img{
+                                    width: 50px!important;
+                                    height: 35px!important;
+                                }
+                                p{
+                                    margin-left: 5px;
+                                }
+                                i{
+                                    width: 0;
+                                    height: 100%;
+                                }
+
+                                &:hover{
+                                    color: red;
+                                }
+                            }
+
+                            
+
+                        }
+                    }
+
+                    &:hover div{
+                        display: block;
+                    }
+                }
+                
+                
+            }
+        }
+    }
+
+
+
+    
+}
+
+
+
+
+
+
+
+
+// 站点新闻
+.news_wrap{
+    height: 200px;
+    padding: 0;
+    padding-top: 20px;
+
+    .row{
+        height: 180px;
+        width: 1140px;
+        .col-md-3{
+            height: 180px;
+            width: 270px;
+            a{
+                width: 90px;
+                height: 90px;
+                padding-top: 25px;
+                float: left;
+                display: inline-block;
+                text-align: center;
+                box-sizing: border-box;
+                color: white;
+                background-color: #f68387;
+                &:nth-of-type(even){
+                    background-color: #f2555b;
+                }
+
+            }
+            img{
+                width: 270px;
+                height: 180px;
+            }
+        }
+    }
+}
+
+
+
+//明星产品
+.star_wrap{
+    height: 420px;
+    padding-top: 30px;
+
+    h3{
+        color: #767676;
+        font-size: 22px;
+        font-weight: bold;
+
+        span{
+            display: block;
+            float: right;
+            width: 25px;
+            height: 25px;
+            line-height: 25px;
+            text-align: center;
+            border: 1px solid #bcbcbc;
+            cursor: pointer;
+            &:last-child{
+                margin-right: 5px;
+            }
+            &:hover{
+                border: 1px solid red;
+                color: #333;
+            }
+        }
+    }
+
+    .products{
+        width: 100%;
+        height: 340px;
+        overflow: hidden;
+        position: relative;
+
+        .products_wrap{
+            width: 2000px;
+            position: absolute;
+            left: 0;
+
+            .product_show{
+                width: 270px;
+                height: 340px;
+                margin-left: 20px;
+                float: left;
+                text-align: center;
+                padding-top: 25px;
+                background: #f7f7f7;
+                font-size: 14px;
+
+                &:first-child{
+                    margin: 0;
+                }
+
+                img{
+                    width: 190px;
+                    height: 190px;
+                    margin: 0 auto;
+                }
+                h4{
+                    line-height: 30px;
+                    margin-top: 15px;
+                }
+                div{
+                    color: #989898;
+                    line-height: 30px;
+                }
+                p{
+                    color: #ed1c24;
+                    line-height: 30px;
+                    span{
+                        text-decoration: line-through;
+                        color: #b0b0b0;
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+
+
+//主要商品内容
+.content{
+    background: #f7f7f7;
+    margin-top: 30px;
+    padding-top: 20px;
+
+    .content_wrap{
+        padding-bottom: 50px;
+        h3{
+            color: #767676;
+            font-size: 22px;
+            height: 50px;
+            line-height: 50px;
+            margin: 30px 0 10px 0;
+
+            &>span{
+                font-size: 22px;
+            }
+            ul{
+                float: right;
+                a:nth-last-of-type(1){
+                    color: #ff5d59;
+                }
+                *{
+                    display: block;
+                    float: left;
+                    color: #333;
+                    font-size: 14px;
+                    margin-right: 4px;
+                }
+                a:hover{
+                    color: #ff5d59;
+                }
+                
+                
+            }
+        }
+
+        &>img{
+            width: 100%;
+            height: 370px;
+        }
+    
+        .products_wrap{
+            margin-top: 20px;
+            .product_show{
+                width: 270px;
+                height: 340px;
+                float: left;
+                margin: 0 0 0 20px;
+                padding-top: 25px;
+                
+                text-align: center;
+                transition: all .5s;
+                background: #fff;
+                font-size: 14px;
+
+                &:first-child{
+                    margin: 0;
+                }
+                img{
+                    width: 190px;
+                    height: 190px;
+                    margin: 0 auto;
+                }
+                h4{
+                    line-height: 30px;
+                    margin-top: 15px;
+                }
+                div{
+                    color: #989898;
+                    line-height: 30px;
+                }
+                p{
+                    color: #ed1c24;
+                    line-height: 30px;
+                    span{
+                        text-decoration: line-through;
+                        color: #b0b0b0;
+                    }
+                }
+
+                &:hover{
+                    box-shadow: 0 10px 25px rgba(0,0,0,.2);
+                    transform: translate3d(0,-2px,0);
+                }
+            }
+        }
+
+        
+    }
+}
+
+
+
+
+//help帮助模块
+.help_wrap{
+    height: 535px;
+    // padding-top: 40px;
+    
+    .footer{
+        // height: 54px;
+        padding: 40px 0 20px 0;
+        border-bottom: 1px solid lightgray;
+
+        li{
+            float: left;
+            width: 220px;
+            height: 54px;
+            padding-left: 35px;
+            color: #b2b2b2;
+            font-weight: bold;
+            
+            i{
+                display: inline-block;
+                height: 54px;
+                line-height: 54px;
+                font-size: 22px;
+                vertical-align: middle;
+            }
+            div{
+                vertical-align: middle;
+                display: inline-block;
+                margin-left: 10px;
+                h4{
+                    font-size: 18px;
+                }
+                span{
+                    font-size: 12px;
+                }
+            }
+         
+        }
+    }
+
+    .footer_links{
+        height: 421px;
+        padding-top: 50px;
+
+        dl{
+            width: 140px;
+            font-size: 14px;
+            float: left;
+            dt{
+                height: 35px;
+                line-height: 35px;
+                color: #333;
+                font-weight: 700;
+                font-size: 16px;
+            }
+            dd{
+                height: 35px;
+                line-height: 35px;
+                a{
+                    color: #767676;
+                }
+                a:hover{
+                    color: red;
+                }
+            }
+        }
+        &>.tel{
+            width: 250px;
+            height: 125px;
+            float: right;
+            border-left: 1px solid #eaeaea;
+            text-align: center;
+
+            p{
+                color: #6f6c71;
+            }
+            span{
+                color: #ff5d59;
+                font-size: 26px;
+                display: block;
+                height: 50px;
+                line-height: 50px;
+            }
+            a{
+                display: inline-block;
+                width: 90px;
+                height: 30px;
+                line-height: 30px;
+                border: 1px solid #ff5d59;
+                color: #ff5d59;
+                font-size: 12px;
+            }
+
+        }
+    }
+
+}
+
+
+
+
+
+// bottom
+.bottom{
+    background-color: #333;
+    .bottom_wrap{
+        height: 100px;
+        .for_logo{
+            height: 100px;
+            float: left;
+            div{
+                width: 0;
+                height: 100px;
+                vertical-align: middle;
+                display: inline-block;
+            }
+            img{
+                vertical-align: middle;
+                display: inline-block;
+                width: 155px;
+                height: 25px;
+            }
+        }
+        .for_link{
+            height: 100px;
+            line-height: 100px;
+            float: right;
+            font-size: 12px;
+            *{
+                float: left;
+                color: #666;
+            }
+            ul>*{
+                float: left;
+                margin-left: 3px;
+            }
+            ul a:hover{
+                color: white;
+            }
+        }
+    }
+}

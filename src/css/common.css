@@ -1,0 +1,28 @@
+@charset "utf-8";
+.float_left{
+    float: left;
+}
+.float_right{
+    float: right;
+}
+.clear_margin{
+    margin: 0!important;
+}
+.clear_border{
+    border: 0!important;
+}
+.clear_bg{
+    background:none!important;
+}
+.visibility_hidden{
+    visibility: hidden;
+}
+
+html,body{
+    /* background-color: #f3f3f3; */
+    background-color: #fff;
+}
+.header_wrap,.nav_wrap,.banner_wrap,.news_wrap,.star_wrap,.content_wrap,.help_wrap,.bottom_wrap{
+    margin: 0 auto;
+    width: 1140px;
+}
